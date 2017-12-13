@@ -1,0 +1,13 @@
+{
+  "customers": [
+    {
+      "_id": "1",
+      "name": {
+        "first": "John",
+        "last": "Doe"
+      },
+      "phone": "555",
+      "email": "john@gmail.com"
+    }
+  ]
+}
