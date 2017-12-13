@@ -67,3 +67,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+
+#dummy data
+customers.json
