@@ -35,7 +35,7 @@ class CustomerForm extends Component {
 
   componentWillReceiveProps = (nextProps) => { // Load Customer Asynchronously
     const { customer } = nextProps;
-    if(customer._id !== this.props.customer._id) { // Initialize form only once
+    if(customer.id !== this.props.customer.id) { // Initialize form only once
       this.props.initialize(customer)
     }
   }
@@ -53,7 +53,7 @@ class CustomerForm extends Component {
     return (
       <Grid centered columns={2}>
         <Grid.Column>
-          <h1 style={{marginTop:"1em"}}>{customer._id ? 'Edit Customer' : 'Add New Customer'}</h1>
+          <h1 style={{marginTop:"1em"}}>{customer.id ? 'Edit Customer' : 'Add New Customer'}</h1>
           <Form onSubmit={handleSubmit} loading={loading}>
             <Form.Group widths='equal'>
               <Field name="name.first" type="text" component={this.renderField} label="First Name"/>

@@ -28,11 +28,11 @@ export function saveCustomer(customer) {
   }
 }
 
-export function fetchCustomer(_id) {
+export function fetchCustomer(id) {
   return dispatch => {
     return dispatch({
       type: 'FETCH_CUSTOMER',
-      payload: client.get(`${url}/${_id}`)
+      payload: client.get(`${url}/${id}`)
     })
   }
 }
@@ -41,16 +41,16 @@ export function updateCustomer(customer) {
   return dispatch => {
     return dispatch({
       type: 'UPDATE_CUSTOMER',
-      payload: client.put(`${url}/${customer._id}`, customer)
+      payload: client.put(`${url}/${customer.id}`, customer)
     })
   }
 }
 
-export function deleteCustomer(_id) {
+export function deleteCustomer(id) {
   return dispatch => {
     return dispatch({
       type: 'DELETE_CUSTOMER',
-      payload: client.delete(`${url}/${_id}`)
+      payload: client.delete(`${url}/${id}`)
     })
   }
 }

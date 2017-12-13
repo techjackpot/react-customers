@@ -95,7 +95,7 @@ export default (state=defaultState, action={}) => {
       const customer = action.payload.data;
       return {
         ...state,
-        customers: state.customers.map(item => item._id === customer._id ? customer : item),
+        customers: state.customers.map(item => item.id === customer.id ? customer : item),
         errors: {},
         loading: false
       }
@@ -113,10 +113,10 @@ export default (state=defaultState, action={}) => {
     }
 
     case 'DELETE_CUSTOMER_FULFILLED': {
-      const _id = action.payload.data._id;
+      const id = action.payload.data.id;
       return {
         ...state,
-        customers: state.customers.filter(item => item._id !== _id)
+        customers: state.customers.filter(item => item.id !== id)
       }
     }
 

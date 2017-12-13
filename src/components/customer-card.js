@@ -16,8 +16,8 @@ export default function CustomerCard({customer, deleteCustomer}) {
       </Card.Content>
       <Card.Content extra>
         <div className="ui two buttons">
-          <Link to={`/customers/edit/${customer._id}`} className="ui basic button green">Edit</Link>
-          <Button basic color="red" onClick={() => deleteCustomer(customer._id)} >Delete</Button>
+          <Link to={`/customers/edit/${customer.id}`} className="ui basic button green">Edit</Link>
+          <Button basic color="red" onClick={() => deleteCustomer(customer.id)} >Delete</Button>
         </div>
       </Card.Content>
     </Card>

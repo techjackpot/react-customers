@@ -13,16 +13,16 @@ class CustomerFormPage extends Component {
   }
 
   componentDidMount = () => {
-    const { _id } = this.props.match.params;
-    if(_id){
-      this.props.fetchCustomer(_id)
+    const { id } = this.props.match.params;
+    if(id){
+      this.props.fetchCustomer(id)
     } else {
       this.props.newCustomer();
     }
   }
 
   submit = (customer) => {
-    if(!customer._id) {
+    if(!customer.id) {
       return this.props.saveCustomer(customer)
         .then(response => this.setState({ redirect:true }))
         .catch(err => {

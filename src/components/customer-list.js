@@ -39,7 +39,7 @@ export default function CustomerList({customers, loading, errors, deleteCustomer
   const cards = () => {
     return customers.map(customer => {
       return (
-        <CustomerCard key={customer._id} customer={customer} deleteCustomer={deleteCustomer} />
+        <CustomerCard key={customer.id} customer={customer} deleteCustomer={deleteCustomer} />
       )
     })
   }
