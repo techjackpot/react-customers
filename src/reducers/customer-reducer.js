@@ -112,8 +112,8 @@ export default (state=defaultState, action={}) => {
       }
     }
 
-    case 'DELETE_CUSTOMER_FULFILLED': {
-      const id = action.payload.data.id;
+    case 'DELETE_CUSTOMER': {
+      const id = action.payload.id;
       return {
         ...state,
         customers: state.customers.filter(item => item.id !== id)

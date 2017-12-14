@@ -50,7 +50,7 @@ export function deleteCustomer(id) {
   return dispatch => {
     return dispatch({
       type: 'DELETE_CUSTOMER',
-      payload: client.delete(`${url}/${id}`)
+      payload: {result: client.delete(`${url}/${id}`), id: id}
     })
   }
 }

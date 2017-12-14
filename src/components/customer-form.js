@@ -14,7 +14,7 @@ const validate = (values) => {
     errors.phone = {
       message: 'You need to provide a Phone number'
     }
-  } else if(!/^\+(?:[0-9] ?){6,14}[0-9]$/.test(values.phone)) {
+  } else if(!/^(?:[0-9] ?){6,14}[0-9]$/.test(values.phone)) {
     errors.phone = {
       message: 'Phone number must be in International format'
     }
@@ -26,6 +26,31 @@ const validate = (values) => {
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = {
       message: 'Invalid email address'
+    }
+  }
+  if(!values.address) {
+    errors.address = {
+      message: 'You need to provide Address'
+    }
+  }
+  if(!values.street) {
+    errors.street = {
+      message: 'You need to provide Street'
+    }
+  }
+  if(!values.city) {
+    errors.city = {
+      message: 'You need to provide City'
+    }
+  }
+  if(!values.state) {
+    errors.state = {
+      message: 'You need to provide State'
+    }
+  }
+  if(!values.zip) {
+    errors.zip = {
+      message: 'You need to provide ZipCode'
     }
   }
   return errors;
@@ -59,8 +84,17 @@ class CustomerForm extends Component {
               <Field name="name.first" type="text" component={this.renderField} label="First Name"/>
               <Field name="name.last" type="text" component={this.renderField} label="Last Name"/>
             </Form.Group>
-            <Field name="phone" type="text" component={this.renderField} label="Phone"/>
             <Field name="email" type="text" component={this.renderField} label="Email"/>
+            <Field name="phone" type="text" component={this.renderField} label="Phone"/>
+            <Field name="address" type="text" component={this.renderField} label="Address"/>
+            <Form.Group widths='equal'>
+              <Field name="street" type="text" component={this.renderField} label="Street"/>
+              <Field name="city" type="text" component={this.renderField} label="City"/>
+            </Form.Group>
+            <Form.Group widths='equal'>
+              <Field name="state" type="text" component={this.renderField} label="State"/>
+              <Field name="zip" type="text" component={this.renderField} label="Zip"/>
+            </Form.Group>
             <Button primary type='submit' disabled={pristine || submitting}>Save</Button>
           </Form>
         </Grid.Column>

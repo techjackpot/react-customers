@@ -12,6 +12,7 @@ export default function CustomerCard({customer, deleteCustomer}) {
         <Card.Description>
           <p><Icon name='phone'/> {customer.phone}</p>
           <p><Icon name='mail outline'/> {customer.email}</p>
+          <p><Icon name='address book outline'/> {customer.street} {customer.address} {customer.city}, {customer.state} {customer.zip}</p>
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
